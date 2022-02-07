@@ -1,0 +1,62 @@
+// Module included in the following assemblies:
+//
+// * web_console/dynamic-plug-ins.adoc
+
+:_content-type: PROCEDURE
+
+[id="build-image-with-docker"]
+= Build an image with Docker
+In order to deploy your plug-in on a cluster, you need to build an image and push it to an image directory.
+
+.Procedure
+
+. Build the image with the following command:
++
+[source,terminal]
+----
+$ docker build -t quay.io/my-repositroy/my-plugin:latest
+----
+
+. Optional: If you would like to test, run the image with the following command:
++
+[source,terminal]
+----
+$ docker run -it --rm -d -p 9001:80 quay.io/my-repository/my-plugin:latest
+----
+
+. Push the image by running the following command:
++
+[source,terminal]
+----
+$ docker push quay.io/my-repository/my-plugin:latest
+----
+
+[id=deploy-on-cluster]
+= Deploy your plug-in on a cluster
+After pushing an image with your changes to a registry, you can deploy the plug-in to a cluster.
+
+.Procedure
+
+. Deploy your plug-in to a cluster by instantiating the link:https://github.com/spadgett/console-plugin-template/blob/main/template.yaml[template]. It will run a light-weight nginx HTTP server to serve your plug-in's assets.
++
+[source,terminal]
+----
+oc process -f template.yaml \
+  -p PLUGIN_NAME=my-plugin \ <1>
+  -p NAMESPACE=my-plugin-namespace \ <2>
+  -p IMAGE=quay.io/my-repository/my-plugin:latest \ <3>
+  | oc create -f -
+----
+<1> Update the name of your plug-in.
+IMPORTANT: `PLUGIN_NAME` must match the plugin name you used in the `ConsolePlugin` declaration of `package.json`.
+
+<2> Update the namespace.
+<3> Update with the name of the image you created.
+
+
+. Patch the *Console Operator* configuration to enable the plug-in by running the following command:
++
+[source,terminal]
+----
+$ oc patch consoles.operator.openshift.io cluster --patch '{ "spec": { "plugins": ["my-plugin"] } }' --type=merge
+----

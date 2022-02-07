@@ -1,0 +1,64 @@
+// Module included in the following assemblies:
+//
+// * web_console/dynamic-plug-ins.adoc
+
+:_content-type: PROCEDURE
+[id="adding-new-extension-dynamic-plugin"]
+= Adding a new extension to your plug-in
+
+[id="adding-tab-to-pods-page"]
+== Adding a tab to the pods page
+The following procedure displays adding a tab to the pod details page:
+
+.Procedure
+
+. Edit the `console-extensions.json` file.
+
++
+[source,yaml]
+
+----
+    },
+ {
+   "type": "console.page/resource/tab",
+   "properties": {
+     "name": "Example Tab",
+     "href": "example",
+     "model": {
+       "group": "core",
+       "version": "v1",
+       "kind": "Pod"
+     },
+     "component": { "$codeRef": "ExampleTab" }
+   }
+----
+
+. Edit the `package.json` file.
+
++
+[source,yaml]
+
+----
+"displayName": "OpenShift Console Plugin Template",
+  "description": "Template project for OpenShift console plugins. Edit package.json to change this message and the plugin name.",
+  "exposedModules": {
+    "ExamplePage": "./components/ExamplePage"
+    "ExamplePage": "./components/ExamplePage",
+    "ExampleTab": "./components/ExampleTab"
+  },
+  "dependencies": {
+    "@console/pluginAPI": "*"
+----
+
+. Make an edit to the `ExamplePage` component `src/components/ExamplePage.tsx` to see your text when loading your plugin.
++
+[source,yaml]
+
+----
+import * as React from 'react';
+export default function ExampleTab() {
+  return (
+    <p>This is a custom tab added to a resource using a dynamic plugin.</p>
+  );
+}
+----

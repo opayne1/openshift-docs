@@ -1,0 +1,90 @@
+// Module included in the following assemblies:
+//
+// * web_console/dynamic-plug-ins.adoc
+
+:_content-type: PROCEDURE
+[id="running-your-dynamic-plugin"]
+= Running your dynamic plug-in
+You can run the plugin using a local development environment. The OpenShift console will run in a container connected to the cluster you have logged into.
+
+[id="run-plug-in-locally"]
+== Run your plug-in locally
+
+.Prerequisites
+* You must have the OpenShift CLI link:https://mirror.openshift.com/pub/[(`oc`)] installed.
+* You must have an OpenShift cluster running.
+* You must have link:https://www.docker.com/[Docker] or link:https://podman.io/[Podman] installed.
+
+.Procedure
+
+. In one terminal window, run:
++
+
+[source,terminal]
+----
+yarn install
+----
+
+. Run:
++
+
+[source,terminal]
+----
+yarn run start
+----
+
+. In the `oc` terminal, run:
++
+
+[source,terminal]
+----
+oc login
+----
+
+. Run:
++
+
+[source,terminal]
+----
+yarn run start-console
+----
+
+. Visit link:http://localhost:9000/example[local host] to view the running plug-in.
+
+[id="run-plug-in-docker-and-VSCode-remote-container"]
+== Run your plug-in with Docker and VSCode Remote Container
+
+.Prerequisites
+* Ensure you have the link:https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers[Remote Containers] extension installed.
+
+NOTE: This method uses Docker Compose where one container is the OpenShift console and the second container is the plugin. It requires that you have access to an existing OpenShift cluster. After the initial build, the cached containers will help you start developing in seconds.
+
+.Procedure
+
+. Create a `dev.env` file inside the ``.devcontainer` folder:
++
+
+[source,terminal]
+----
+OC_PLUGIN_NAME=my-plugin <1>
+OC_URL=https://api.example.com:6443 <2>
+OC_USER=kubeadmin <3>
+OC_PASS=<password> <4>
+----
+<1> Update with your plug-in name.
+<2> Update with the correct value.
+<3> Enter your username.
+<4> Enter your password.
+
+. Visit *Remote Containers*
+
+. Click `Open Folder in Container`
+
+. Run:
++
+[source,terminal]
+----
+yarn run start
+----
+
+. Visit link:http://localhost:9000/example[local host] to view the running plug-in.

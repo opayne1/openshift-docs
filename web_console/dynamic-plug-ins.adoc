@@ -1,0 +1,30 @@
+:_content-type: ASSEMBLY
+[id=" adding-dynamic-plugin-to-console"]
+= Adding a dynamic plug-in to the {product-title} web console
+include::modules/common-attributes.adoc[]
+:context: dynamic-plugins
+
+toc::[]
+
+You can create and deploy a dynamic plug-in on your cluster that is loaded at run-time.
+
+:FeatureName: Dynamic plug-ins
+include::snippets/technology-preview.adoc[leveloffset=+1]
+//
+
+include::modules/about-dynamic-plug-ins.adoc[leveloffset=+1]
+
+include::modules/dynamic-plug-ins-get-started.adoc[leveloffset=+1]
+
+include::modules/adding-new-extension-dynamic-plug-in.adoc[leveloffset=+1]
+
+include::modules/running-your-dynamic-plug-in.adoc[leveloffset=+1]
+
+include::modules/deployment-plug-in-cluster.adoc[leveloffset=+1]
+
+[id="dynamic-plugin-additional-resources"]
+== Additional resources
+
+* The console customization plug-in can provide some guidance to building a dynamic plug-in, refer to link:https://github.com/spadgett/console-customization-plugin[Console Customization plugin].
+* link:https://github.com/openshift/console/tree/master/frontend/packages/console-dynamic-plugin-sdk#openshift-console-dynamic-plugins[Console Plug-in SDK README]
+* link:https://github.com/openshift/enhancements/blob/master/enhancements/console/dynamic-plugins.md[Dynamic Plug-in enhancement proposal]

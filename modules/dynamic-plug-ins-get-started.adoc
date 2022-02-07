@@ -1,0 +1,45 @@
+// Module included in the following assemblies:
+//
+// * web_console/dynamic-plug-ins.adoc
+
+:_content-type: PROCEDURE
+[id="getting-started-with-dynamic-plugins"]
+= Getting started with dynamic plug-ins
+In order to get started using the dynamic plug-in, you must set up your environment to write a new OpenShift Console dynamic plug-in.
+
+.Prerequisites
+
+* Ensure you have link:https://nodejs.org/en/[`Node.js`] and link:https://yarnpkg.com/[`yarn`] installed.
+
+.Procedure
+
+. Visit this link:https://github.com/spadgett/console-plugin-template[repository] containing a template for creating plug-ins.
+
+. Select `Use this Template` from the *<> Code* tab to create a GitHub repository.
+
+. Re-name the template with the name of your plug-in.
+
+. From your copied repository, clone it so you have the template on your local machine.
+
+. Edit the plugin metadata in the `ConsolePlugin` declaration of `package.json`.
++
+[source,yaml]
+
+----
+    "consolePlugin": {
+  "name": "my-plugin", <1>
+  "version": "0.0.1", <2>
+  "displayName": "My Plugin", <3>
+  "description": "Enjoy this shiny, new console plugin!", <4>
+  "exposedModules": {
+    "ExamplePage": "./components/ExamplePage"
+  },
+  "dependencies": {
+    "@console/pluginAPI": "*"
+  }
+}
+----
+<1> Update the file name for your plug-in.
+<2> Update the version.
+<3> Update the display name that will appear when your plug-in is deployed.
+<4> Update the description with a synopsis about your plug-in.

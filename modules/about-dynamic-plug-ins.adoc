@@ -1,0 +1,18 @@
+// Module is included in the following assemblies:
+//
+// * openshift-docs/web_console/dynamic-plug-ins.adoc
+
+:_content-type: CONCEPT
+[id="about-dynamic-plugins"]
+= About dynamic plug-ins
+
+The dynamic plug-in allows you to add custom pages and other extensions to your interface at runtime. Plug-ins are registered with the console using the `ConsolePlugin` custom resource, and they are enabled in the console operator configuration by a cluster administrator.
+
+[id="dynamic-plugins-features"]
+== Key features
+
+The dynamic plug-in will allow you to make customizations such as:
+
+* Add custom pages and other extensions
+* Add perspectives and update navigation items
+* Add tabs and actions to resource pages
