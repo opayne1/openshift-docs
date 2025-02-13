@@ -537,14 +537,14 @@ For more information, see  xref:../installing/install_config/configuring-firewal
 [id="ocp-release-notes-networking-metallb-dynamic-asn_{context}"]
 ==== MetalLB updates for Border Gateway Protocol
 
-With this release, MetalLB includes a new field for the Border Gateway Protocol (BGP) peer custom resource. 
-You can use the `dynamicASN` field to detect the Autonomous System Number (ASN) to use for the remote end of a BGP session.  
+With this release, MetalLB includes a new field for the Border Gateway Protocol (BGP) peer custom resource.
+You can use the `dynamicASN` field to detect the Autonomous System Number (ASN) to use for the remote end of a BGP session.
 This is an alternative to explicitly setting an ASN in the `spec.peerASN` field.
 
 [id="ocp-release-notes-networking-sr-iov-rdma-cni_{context}"]
-==== Configuring an RDMA subsytem for SR-IOV 
+==== Configuring an RDMA subsytem for SR-IOV
 
-With this release, you can configure a Remote Direct Memory Access (RDMA) Container Network Interface (CNI) on Single Root I/O Virtualization (SR-IOV) to enable high-performance, low-latency communication between containers. 
+With this release, you can configure a Remote Direct Memory Access (RDMA) Container Network Interface (CNI) on Single Root I/O Virtualization (SR-IOV) to enable high-performance, low-latency communication between containers.
 When you combine RDMA with SR-IOV, you provide a mechanism to expose hardware counters of Mellanox Ethernet devices to be used inside Data Plane Development Kit (DPDK) applications.
 
 [id="ocp-release-notes-nodes_{context}"]
@@ -610,6 +610,34 @@ Previously, the `thinPoolConfig.overprovisionRatio` field in the `LVMCluster` cu
 
 [id="ocp-release-notes-web-console_{context}"]
 === Web console
+
+[id="ocp-4-18-administrator-perspective_{context}"]
+==== Administrator perspective
+
+This release introduces the following updates to the *Administrator* perspective of the web console:
+
+* A new setting for hiding the *Getting Started Resources* card on the *Overview* page allowing for maximum use of the dashboard.
+* A *Start Job* option was added to the *List* and *Details* pages, so you can start individual CronJobs manually directly in the web console without having to use the `oc` CLI.
+* The *Import YAML* button in the masthead is now a *Quick Create* button, and to allow rapid deployment of workloads, you can use YAML, Git, or a container image.
+* You can build your own generative-AI chat bot with a chat bot sample. The generative-AI chat bot sample is deployed with Helm and includes a full CI/CD pipeline. You can also run this sample on your cluster with no CPUs.
+* You can import YAML into the console using {ols}.
+
+[id="ocp-4-18-administrator-perspective_content-security-policy{context}"]
+===== Content Security Policy (CSP)
+
+With this release, the console Content Security Policy (CSP) is deployed in report-only mode. CSP violations will be logged in the browser console, but the associated CSP directives will not be enforced. Dynamic plugin creators can add their own policies.
+
+Additionally, you can report any plugins that break security policies. Administrators have the ability to disable any plugin breaking those policies. It is deployed in report-only mode. CSP violations will be logged in the browser console, but the associated CSP directives will not be enforced. This feature is behind a `feature-gate`, so you will need to manually enable it.
+
+For more information, see xref:../nodes/clusters/nodes-cluster-enabling-features.adoc#nodes-cluster-enabling-features-console_nodes-cluster-enabling[Enabling feature sets using the web console].
+
+[id="ocp-4-18-developer-perspective_{context}"]
+==== Developer Perspective
+
+This release introduces the following updates to the *Developer* perspective of the web console:
+
+* Added a {product-title} toolkit, Quarkus tools and JBoss EAP, and a Language Server Protocol Plugin for Visual Studio Code and IntelliJ.
+* Previously, when moving from light mode to dark mode in the Monaco editor, the console remained in dark mode. With this update, the Monaco code editor will match the selected theme.
 
 [id="ocp-4-18-notable-technical-changes_{context}"]
 == Notable technical changes
