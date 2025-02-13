@@ -887,6 +887,8 @@ Topics:
     File: deploy-plugin-cluster
   - Name: Dynamic plugin example
     File: dynamic-plugin-example
+  - Name: Content Security Policy
+    File: content-security-policy
   - Name: Dynamic plugin reference
     File: dynamic-plugins-reference
 - Name: Web terminal
