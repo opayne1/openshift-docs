@@ -49,6 +49,17 @@ The scope of support for layered and dependent components of {product-title} cha
 
 This release adds improvements related to the following components and concepts:
 
+[id="ocp-release-notes-web-console_{context}"]
+=== Web console
+
+Starting with {product-title} 4.19, the perspectives in the web console have unified to simplify navigation, reduce context switching, streamline tasks, and provide users with a more cohesive {product-title} experiance.
+
+With this unified design, there is no longer a *Developer* perspective by default; however,
+_all_ {product-title} web console features are discoverable to all users. If you are not the cluster owner, you might need to request permission to certain features from the cluster owner. You can still enable the *Developer* perspective.
+//See <module> for more information on enabling the *Developer* perspective. A quick start is also available with more information.
+
+The *Getting Started* card in the web console also provides resources such as, a tour of the console, information on setting up your cluster, and links to explore new features and capabilities.
+
 [id="ocp-release-notes-auth_{context}"]
 === Authentication and authorization
 
@@ -519,17 +530,6 @@ For more information, see xref:../security/tls-security-profiles.adoc#tls-profil
 
 [id="ocp-release-notes-storage_{context}"]
 === Storage
-
-[id="ocp-release-notes-web-console_{context}"]
-=== Web console
-
-[id="ocp-administrator-perspective_{context}"]
-==== Administrator perspective
-
-[id="ocp-developer-perspective_{context}"]
-==== Developer Perspective
-
-This release introduces the following updates to the *Developer* perspective of the web console:
 
 [id="ocp-4-19-notable-technical-changes_{context}"]
 == Notable technical changes
