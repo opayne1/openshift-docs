@@ -1462,8 +1462,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="requesting-crio-kubelet-profiling-using-noo_profile-node-performance-with-node-observability.html">Requesting CRI-O and Kubelet profiling data using the Node Observability Operator</a>
 </li>
-<li><a href="virt-about-the-overview-dashboard_view-cluster-information-on-the-dashboard.html">About the Red&#160;Hat OpenShift Container Platform dashboards page</a>
-</li>
 <li><a href="virt-about-the-overview-dashboard_view-cluster-resource-utilization.html"><span class="toc-current">About the Red&#160;Hat OpenShift Container Platform dashboards page</span></a>
 </li>
 <li><a href="view-node-status-and-resource-usage-con_view-node-status-and-resource-usage.html">View node status and resource usage</a>
@@ -1875,7 +1873,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#recognize-resource-limits-quotas">Recognize resource and project limits and quotas</a></li><li class="level-4"><a href="#nodes-dashboard-using-about_view-cluster-resource-utilization">About the node metrics dashboard</a></li><li class="level-4"><a href="#nodes-dashboard-using-accessing_view-cluster-resource-utilization">Access the node metrics dashboard</a></li><li class="level-4"><a href="#nodes-dashboard-using-identify_view-cluster-resource-utilization">Identify metrics for indicating optimal node resource usage</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-top3_view-cluster-resource-utilization">Top 3 containers with the most OOM kills in the last day</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-pulls_view-cluster-resource-utilization">Failure rate for image pulls in the last hour</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-memory_view-cluster-resource-utilization">Nodes with system reserved memory utilization &gt; 80%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-memory-kubelet_view-cluster-resource-utilization">Nodes with Kubelet system reserved memory utilization &gt; 50%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-memory-crio_view-cluster-resource-utilization">Nodes with CRI-O system reserved memory utilization &gt; 50%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-cpu">Nodes with System Reserved CPU Utilization &gt; 80%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-cpu-kubelet_view-cluster-resource-utilization">Nodes with Kubelet system reserved CPU utilization &gt; 50%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-cpu-crio">Nodes with CRI-O system reserved CPU utilization &gt; 50%</a></li><li class="level-4"><a href="#nodes-dashboard-using-queries_view-cluster-resource-utilization">Customizing dashboard queries</a></li></ul></aside>
+<aside id="navmap-right-toc" aria-label="On this page"><h2>On this page</h2><ul><li class="level-4"><a href="#view-project-dashboards_view-cluster-resource-utilization">Viewing project dashboards</a></li><li class="level-4"><a href="#recognize-resource-limits-quotas">Recognize resource and project limits and quotas</a></li><li class="level-4"><a href="#nodes-dashboard-using-about_view-cluster-resource-utilization">About the node metrics dashboard</a></li><li class="level-4"><a href="#nodes-dashboard-using-accessing_view-cluster-resource-utilization">Access the node metrics dashboard</a></li><li class="level-4"><a href="#nodes-dashboard-using-identify_view-cluster-resource-utilization">Identify metrics for indicating optimal node resource usage</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-top3_view-cluster-resource-utilization">Top 3 containers with the most OOM kills in the last day</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-pulls_view-cluster-resource-utilization">Failure rate for image pulls in the last hour</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-memory_view-cluster-resource-utilization">Nodes with system reserved memory utilization &gt; 80%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-memory-kubelet_view-cluster-resource-utilization">Nodes with Kubelet system reserved memory utilization &gt; 50%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-memory-crio_view-cluster-resource-utilization">Nodes with CRI-O system reserved memory utilization &gt; 50%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-cpu">Nodes with System Reserved CPU Utilization &gt; 80%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-cpu-kubelet_view-cluster-resource-utilization">Nodes with Kubelet system reserved CPU utilization &gt; 50%</a></li><li class="level-5"><a href="#nodes-dashboard-using-identify-critical-cpu-crio">Nodes with CRI-O system reserved CPU utilization &gt; 50%</a></li><li class="level-4"><a href="#nodes-dashboard-using-queries_view-cluster-resource-utilization">Customizing dashboard queries</a></li></ul></aside>
 <div id="content">
 <div class="sect2">
 <h3 id="virt-about-the-overview-dashboard_view-cluster-resource-utilization">About the Red&#160;Hat OpenShift Container Platform dashboards page</h3>
@@ -1957,6 +1955,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Activity</strong> lists messages related to recent activity in the cluster, such as pod creation or virtual machine migration to another host.</p>
 </li>
 </ul>
+</div>
+<div class="sect3">
+<h4 id="view-project-dashboards_view-cluster-resource-utilization">Viewing project dashboards</h4>
+<div class="paragraph _abstract">
+<p>View pre-built dashboards showing CPU usage, memory usage, bandwidth consumption, and network information across your project (namespace) topology to help you monitor application performance.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Developer</strong> perspective navigation menu, select <strong>Observe</strong>.</p>
+</li>
+<li>
+<p>Select a project from the <strong>Project</strong> list. After you select a project, the monitoring tabs are displayed.</p>
+</li>
+<li>
+<p>Click the <strong>Dashboards</strong> tab.</p>
+<div class="paragraph">
+<p>The <strong>Dashboards</strong> tab displays pre-built Kubernetes compute resources dashboards showing metrics such as CPU usage, memory usage, bandwidth consumption, and network-related information. The dashboard layout includes metric cards at the top showing current utilization percentages, and expandable graph sections below showing detailed resource usage trends over time.</p>
+</div>
+</li>
+</ol>
+</div>
 </div>
 <div class="sect3">
 <h4 id="recognize-resource-limits-quotas">Recognize resource and project limits and quotas</h4>
@@ -2257,7 +2278,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="virt-about-the-overview-dashboard_view-cluster-information-on-the-dashboard.html">About the Red&#160;Hat OpenShift Container Platform dashboards page</a> | ↑ Up: <a href="_observe.html">Observe</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="view-node-status-and-resource-usage-con_view-node-status-and-resource-usage.html">View node status and resource usage</a> →</p>
+<p>← Previous: <a href="requesting-crio-kubelet-profiling-using-noo_profile-node-performance-with-node-observability.html">Requesting CRI-O and Kubelet profiling data using the Node Observability Operator</a> | ↑ Up: <a href="_observe.html">Observe</a> | ⌂ Home: <a href="navigation.html">Red Hat OpenShift Container Platform</a> | Next: <a href="view-node-status-and-resource-usage-con_view-node-status-and-resource-usage.html">View node status and resource usage</a> →</p>
 </div>
 </div>
 <div id="footnotes">
@@ -2268,7 +2289,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-28 14:44:54 -0400
+Last updated 2026-10-29 11:45:54 -0400
 </div>
 </div>
 <style>
